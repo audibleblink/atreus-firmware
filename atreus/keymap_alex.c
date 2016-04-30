@@ -3,16 +3,22 @@
 #include "actionmap.h"
 #include "action_code.h"
 
-/*
-   My Custon Layer:
+/* My Custon Layer:
    - ALT <=> CMD
-   - Use | ~ instead of PageUp PageDown on L2
-   - Adds mouse layer
-   - Tap Keys for S and D
+   - Use | ~ instead of default PageUp PageDown on L2
 */
 
 
+/* Enable Momentary Dual Function Modifiers */
 #define AC_TAP(layer, key)  ACTION_LAYER_TAP_KEY(layer, AC_##key)
+
+/* Window Tiling Macros */
+#define AC_TFLS ACTION_MODS_KEY(MOD_LALT | MOD_LCTL | MOD_LGUI, KC_M)     /* Full Screen  */
+#define AC_TLFT ACTION_MODS_KEY(MOD_LALT | MOD_LCTL | MOD_LGUI, KC_LEFT)  /* Tile Left    */
+#define AC_TLRT ACTION_MODS_KEY(MOD_LALT | MOD_LCTL | MOD_LGUI, KC_RIGHT) /* Tile Right   */
+#define AC_TNMN ACTION_MODS_KEY(MOD_LALT | MOD_LCTL, KC_RIGHT)            /* Next Monitor */
+#define AC_TPMN ACTION_MODS_KEY(MOD_LALT | MOD_LCTL, KC_LEFT)             /* Prev Monitor */
+
 
 const uint16_t PROGMEM actionmaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -44,10 +50,10 @@ const uint16_t PROGMEM actionmaps[][MATRIX_ROWS][MATRIX_COLS] = {
       ESC  , LSFT , LALT , LSFT , BSPC , LCTL , LGUI , SPC  , OFF(3) , NO   , NO   , ENT
   ),
 
-  KEYMAP( /* 4: quick arrows and media */
+  KEYMAP( /* 4: quick arrows, tiling,  and media */
       NO  , NO   , NO   , NO   , NO                 , MPRV , MPLY   , MNXT , VOLD  , VOLU , \
       NO  , TRNS , NO   , NO   , NO                 , LEFT , DOWN   , UP   , RIGHT , NO   , \
-      NO  , NO   , NO   , NO   , NO                 , NO   , NO     , NO   , NO    , NO   , \
+      NO  , NO   , NO   , NO   , NO                 , TPMN , TLFT   , TFLS , TLRT  , TNMN , \
       ESC , LSFT , LALT , LSFT , DEL  , LCTL , LGUI , SPC  , OFF(4) , NO   , NO    , ENT
   )
 };
