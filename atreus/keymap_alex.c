@@ -48,6 +48,6 @@ const uint16_t PROGMEM actionmaps[][MATRIX_ROWS][MATRIX_COLS] = {
       NO  , NO   , NO   , NO   , NO                 , MPRV , MPLY   , MNXT , VOLD  , VOLU , \
       NO  , TRNS , NO   , NO   , NO                 , LEFT , DOWN   , UP   , RIGHT , NO   , \
       NO  , NO   , NO   , NO   , NO                 , NO   , NO     , NO   , NO    , NO   , \
-      ESC , LSFT , LALT , LSFT , BSPC , LCTL , LGUI , SPC  , OFF(4) , NO   , NO    , ENT
+      ESC , LSFT , LALT , LSFT , DEL  , LCTL , LGUI , SPC  , OFF(4) , NO   , NO    , ENT
   )
 };
