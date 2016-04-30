@@ -3,7 +3,8 @@
 #include "actionmap.h"
 #include "action_code.h"
 
-/* My Custon Layer with ALT <=> CMD and | ~ instead of PageU/PageD on Layer 2 */
+/* My Custon Layer with ALT <=> CMD and | ~ instead of PageU/PageD on Layer 2
+   Also adds mouse layer */
 
 const uint16_t PROGMEM actionmaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -18,7 +19,7 @@ const uint16_t PROGMEM actionmaps[][MATRIX_ROWS][MATRIX_COLS] = {
       SH(1) , SH(2)   , SH(LBRC) , SH(RBRC) , SH(BSLS)                 , SH(BSLS)  , 7    , 8   , 9  , SH(8)     , \
       SH(3) , SH(4)   , SH(9)    , SH(0)    , GRAVE                    , SH(GRAVE) , 4    , 5   , 6  , SH(EQUAL) , \
       SH(5) , SH(6)   , LBRC     , RBRC     , SH(GRAVE)                , SH(7)     , 1    , 2   , 3  , BSLS      , \
-      ON(2) , SH(INS) , LALT     , LSFT     , BSPC      , LCTL  , LGUI , SPC       , LM1  , DOT , 0  , EQUAL
+      ON(2) , ON(3) , LALT       , LSFT     , BSPC      , LCTL  , LGUI , SPC       , LM1  , DOT , 0  , EQUAL
   ),
 
   KEYMAP( /* 2: arrows and function keys */
@@ -26,5 +27,12 @@ const uint16_t PROGMEM actionmaps[][MATRIX_ROWS][MATRIX_COLS] = {
       DEL , LEFT , DOWN , RIGHT , PGDN               , DOWN , F4     , F5  , F6  , F11 , \
       NO  , NO   , NO   , NO    , BOOT               , NO   , F1     , F2  , F3  , F12 , \
       NO  , LSFT , LALT , LSFT  , BSPC , LCTL , LGUI , SPC  , OFF(2) , NO  , NO  , ENT
+  ),
+
+  KEYMAP( /* 3: mouse */
+      NO   , NO   , NO   , NO   , NO                 , WH_U , NO   , MS_U , NO     , NO , \
+      ACL0 , ACL1 , ACL2 , NO   , NO                 , WH_D , MS_L , MS_D , MS_R   , NO , \
+      NO   , NO   , NO   , NO   , NO                 , NO   , BTN1 , BTN2 , BTN3   , NO , \
+      NO   , LSFT , LALT , LSFT , BSPC , LCTL , LGUI , SPC  , OFF(3) , NO , NO , ENT
   )
 };
