@@ -31,8 +31,8 @@ const uint16_t PROGMEM actionmaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   KEYMAP( /* 2: arrows and function keys */
-      INS , HOME , UP   , END   , PGUP               , UP   , F7     , F8  , F9  , F10 , \
-      DEL , LEFT , DOWN , RIGHT , PGDN               , DOWN , F4     , F5  , F6  , F11 , \
+      INS , HOME , UP   , END   , PGUP               , DOWN , F7     , F8  , F9  , F10 , \
+      DEL , LEFT , DOWN , RIGHT , PGDN               , UP   , F4     , F5  , F6  , F11 , \
       NO  , NO   , NO   , NO    , BOOT               , NO   , F1     , F2  , F3  , F12 , \
       NO  , LSFT , LALT , LSFT  , BSPC , LCTL , LGUI , SPC  , OFF(2) , NO  , NO  , ENT
   ),
