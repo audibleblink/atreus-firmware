@@ -23,7 +23,7 @@
 const uint16_t PROGMEM actionmaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   KEYMAP( /* 0: mostly letters */
-      Q        , W        , E    , R    , T                  , Y    , U    , I   , O    , P    , \
+      TAP(5,Q) , W        , E    , R    , T                  , Y    , U    , I   , O    , P    , \
       A        , TAP(4,S) , D    , F    , G                  , H    , J   , K    , L    , SCLN , \
       TAP(3,Z) , X        , C    , V    , B                  , N    , M   , COMM , DOT  , SLSH , \
       ESC      , TAB      , LALT , LSFT , BSPC , LCTL , LGUI , SPC , LM1  , MINS , QUOT , ENT
@@ -55,5 +55,12 @@ const uint16_t PROGMEM actionmaps[][MATRIX_ROWS][MATRIX_COLS] = {
       NO  , TRNS , NO   , NO   , NO                 , LEFT , DOWN   , UP   , RIGHT , MUTE , \
       NO  , NO   , NO   , NO   , NO                 , TPMN , TLFT   , TFLS , TLRT  , TNMN , \
       ESC , LSFT , LALT , LSFT , DEL  , LCTL , LGUI , SPC  , OFF(4) , NO   , NO    , ENT
-  )
+  ),
+
+  KEYMAP( /* 5: quick number selections */
+      TRNS , NO , NO , NO , NO , NO , GUI(7)  , GUI(8)  , GUI(9)  , NO , \
+      NO   , NO , NO , NO , NO , NO , GUI(4)  , GUI(5)  , GUI(6)  , NO , \
+      NO   , NO , NO , NO , NO , NO , GUI(1)  , GUI(2)  , GUI(3)  , NO , \
+      NO   , NO , NO , NO , NO , NO , NO , NO , NO , NO , NO , NO
+  ),
 };
