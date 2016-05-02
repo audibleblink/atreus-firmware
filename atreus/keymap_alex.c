@@ -30,7 +30,7 @@ const uint16_t PROGMEM actionmaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   KEYMAP( /* 1: punctuation and numbers */
-      SH(1) , SH(2)   , SH(LBRC) , SH(RBRC) , SH(BSLS)                 , SH(BSLS)  , 7    , 8   , 9  , SH(8)     , \
+      SH(1) , SH(2)   , SH(LBRC) , SH(RBRC) , GUI(GRAVE)               , SH(BSLS)  , 7    , 8   , 9  , SH(8)     , \
       SH(3) , SH(4)   , SH(9)    , SH(0)    , GRAVE                    , SH(GRAVE) , 4    , 5   , 6  , SH(EQUAL) , \
       SH(5) , SH(6)   , LBRC     , RBRC     , SH(GRAVE)                , SH(7)     , 1    , 2   , 3  , BSLS      , \
       ON(2) , ON(3)   , LALT     , LSFT     , BSPC      , LCTL  , LGUI , SPC       , LM1  , DOT , 0  , EQUAL
