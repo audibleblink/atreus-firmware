@@ -14,6 +14,10 @@
 /* Find tag declaration in Vim*/
 #define AC_TAG ACTION_MODS_KEY(MOD_LCTL, KC_RBRC)
 
+/* Linewise word skipping */
+#define AC_WL ACTION_MODS_KEY(MOD_LALT, KC_LEFT)
+#define AC_WR ACTION_MODS_KEY(MOD_LALT, KC_RIGHT)
+
 /* Window Tiling Macros */
 #define AC_TFLS ACTION_MODS_KEY(MOD_LALT | MOD_LCTL | MOD_LGUI, KC_M)     /* Full Screen  */
 #define AC_TLFT ACTION_MODS_KEY(MOD_LALT | MOD_LCTL | MOD_LGUI, KC_LEFT)  /* Tile Left    */
@@ -25,7 +29,7 @@
 const uint16_t PROGMEM actionmaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   KEYMAP( /* 0: mostly letters */
-      Q        , W        , E    , R    , T                  , Y    , U    , I   , O    , P    , \
+      Q        , TAP(5,W) , E    , R    , T                  , Y    , U    , I   , O    , P    , \
       A        , TAP(4,S) , D    , F    , G                  , H    , J   , K    , L    , SCLN , \
       TAP(3,Z) , X        , C    , V    , B                  , N    , M   , COMM , DOT  , SLSH , \
       ESC      , LALT     , TAB  , LSFT , BSPC , LGUI , LCTL , SPC , LM1  , MINS , QUOT , ENT
@@ -59,4 +63,10 @@ const uint16_t PROGMEM actionmaps[][MATRIX_ROWS][MATRIX_COLS] = {
       ESC , LALT , TAB  , LSFT , DEL  , LGUI , LCTL , SPC  , OFF(4) , NO   , TAG   , ENT
   ),
 
+  KEYMAP( /* 5: word movements */
+      NO  , TRNS , NO   , NO   , NO                 , NO   , NO     , NO   , NO    , NO , \
+      NO  , NO   , NO   , NO   , NO                 , WL   , DOWN   , UP   , WR    , NO , \
+      NO  , NO   , NO   , NO   , NO                 , NO   , NO     , NO   , NO    , NO , \
+      ESC , LALT , TAB  , LSFT , DEL  , LGUI , LCTL , SPC  , OFF(5) , NO   , NO    , ENT
+  ),
 };
