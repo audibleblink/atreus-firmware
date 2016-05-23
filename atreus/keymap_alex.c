@@ -8,9 +8,11 @@
    - Use | ~ instead of default PageUp PageDown on L2
 */
 
-
 /* Enable Momentary Dual Function Modifiers */
 #define AC_TAP(layer, key)  ACTION_LAYER_TAP_KEY(layer, AC_##key)
+
+/* Find tag declaration in Vim*/
+#define AC_TAG ACTION_MODS_KEY(MOD_LCTL, KC_RBRC)
 
 /* Window Tiling Macros */
 #define AC_TFLS ACTION_MODS_KEY(MOD_LALT | MOD_LCTL | MOD_LGUI, KC_M)     /* Full Screen  */
@@ -54,7 +56,7 @@ const uint16_t PROGMEM actionmaps[][MATRIX_ROWS][MATRIX_COLS] = {
       NO  , NO   , NO   , NO   , NO                 , MPRV , MPLY   , MNXT , VOLD  , VOLU , \
       NO  , TRNS , NO   , NO   , NO                 , LEFT , DOWN   , UP   , RIGHT , MUTE , \
       NO  , NO   , NO   , NO   , NO                 , TPMN , TLFT   , TFLS , TLRT  , TNMN , \
-      ESC , LALT , TAB  , LSFT , DEL  , LGUI , LCTL , SPC  , OFF(4) , NO   , NO    , ENT
+      ESC , LALT , TAB  , LSFT , DEL  , LGUI , LCTL , SPC  , OFF(4) , NO   , TAG   , ENT
   ),
 
 };
