@@ -17,6 +17,8 @@
 /* Linewise word skipping */
 #define AC_WL ACTION_MODS_KEY(MOD_LALT, KC_LEFT)
 #define AC_WR ACTION_MODS_KEY(MOD_LALT, KC_RIGHT)
+#define AC_WU ACTION_MODS_KEY(MOD_LALT, KC_UP)
+#define AC_WD ACTION_MODS_KEY(MOD_LALT, KC_DOWN)
 
 /* Window Tiling Macros */
 #define AC_TFLS ACTION_MODS_KEY(MOD_LALT | MOD_LCTL | MOD_LGUI, KC_M)     /* Full Screen  */
@@ -65,7 +67,7 @@ const uint16_t PROGMEM actionmaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   KEYMAP( /* 5: word movements */
       NO  , TRNS , NO   , NO   , NO                 , NO   , NO     , NO   , NO    , NO , \
-      NO  , NO   , NO   , NO   , NO                 , WL   , DOWN   , UP   , WR    , NO , \
+      NO  , NO   , NO   , NO   , NO                 , WL   , WD     , WU   , WR    , NO , \
       NO  , NO   , NO   , NO   , NO                 , NO   , NO     , NO   , NO    , NO , \
       ESC , LALT , TAB  , LSFT , DEL  , LGUI , LCTL , SPC  , OFF(5) , NO   , NO    , ENT
   ),
