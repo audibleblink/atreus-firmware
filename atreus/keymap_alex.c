@@ -15,20 +15,22 @@
 /* Define CTRL modifying function */
 #define AC_CT(key) ACTION_MODS_KEY(MOD_LCTL, AC_##key)
 
-const uint16_t PROGMEM actionmaps[][MATRIX_ROWS][MATRIX_COLS] = {
+/* Define TUX/GUI modifying function */
+#define AC_TX(key) ACTION_MODS_KEY(MOD_LGUI, AC_##key)
 
+const uint16_t PROGMEM actionmaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KEYMAP( /* 0: mostly letters */
-      Q   , TP(4,W) , E   , R    , T                  , Y   , U   , I    , O    , P    , \
-      A   , TP(3,S) , D   , F    , G                  , H   , J   , K    , L    , SCLN , \
-      Z   , TP(5,X) , C   , V    , B                  , N   , M   , COMM , DOT  , SLSH , \
-      ESC , LALT    , TAB , LSFT , BSPC , LGUI , LCTL , SPC , LM1 , MINS , QUOT , ENT
+      Q   , TP(4,W) , E   , R      , T                  , Y   , U   , I    , O    , P    , \
+      A   , S       , D   , TP(3,F), G                  , H   , J   , K    , L    , SCLN , \
+      Z   , TP(5,X) , C   , V      , B                  , N   , M   , COMM , DOT  , SLSH , \
+      ESC , LGUI    , TAB , LSFT   , BSPC , RALT , RCTL , SPC , LM1 , MINS , QUOT , ENT
   ),
 
   KEYMAP( /* 1: punctuation and numbers */
-      SH(1) , SH(2) , SH(LBRC) , SH(RBRC) , GUI(GRAVE)               , SH(BSLS)  , 7    , 8   , 9  , SH(8)     , \
-      SH(3) , SH(4) , SH(9)    , SH(0)    , GRAVE                    , SH(GRAVE) , 4    , 5   , 6  , SH(EQUAL) , \
-      SH(5) , SH(6) , LBRC     , RBRC     , SH(GRAVE)                , SH(7)     , 1    , 2   , 3  , BSLS      , \
-      ON(2) , TRNS  , TRNS     , TRNS     , TRNS      , TRNS  , TRNS , TRNS      , TRNS , DOT , 0  , EQUAL
+      SH(1) , SH(2) , SH(LBRC) , SH(RBRC) , GUI(GRAVE)               , SH(BSLS)  , 7    , 8 , 9   , SH(8)     , \
+      SH(3) , SH(4) , SH(9)    , SH(0)    , GRAVE                    , SH(GRAVE) , 4    , 5 , 6   , SH(EQUAL) , \
+      SH(5) , SH(6) , LBRC     , RBRC     , SH(GRAVE)                , SH(7)     , 1    , 2 , 3   , BSLS      , \
+      ON(2) , TRNS  , TRNS     , TRNS     , TRNS      , TRNS  , TRNS , TRNS      , TRNS , 0 , DOT , EQUAL
   ),
 
   KEYMAP( /* 2: arrows and function keys */
@@ -40,8 +42,8 @@ const uint16_t PROGMEM actionmaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   KEYMAP( /* 3: quick arrows, tiling, and media */
       NO   , NO   , NO   , NO   , NO                 , MPRV , MPLY , MNXT , VOLD  , VOLU , \
-      NO   , TRNS , NO   , NO   , NO                 , LEFT , DOWN , UP   , RIGHT , MUTE , \
-      NO   , NO   , NO   , NO   , NO                 , TPMN , TLFT , TFLS , TLRT  , TNMN , \
+      NO   , NO   , NO   , TRNS , NO                 , LEFT , DOWN , UP   , RIGHT , MUTE , \
+      NO   , NO   , NO   , NO   , NO                 , TRNS , TRNS , TRNS , TRNS  , TRNS , \
       TRNS , TRNS , TRNS , TRNS , TRNS , TRNS , TRNS , TRNS , TRNS , NO   , TAG   , TRNS
   ),
 
@@ -49,7 +51,7 @@ const uint16_t PROGMEM actionmaps[][MATRIX_ROWS][MATRIX_COLS] = {
       NO   , TRNS , NO   , NO   , NO                 , NO   , AL(7) , AL(8) , AL(9) , NO , \
       NO   , NO   , NO   , NO   , NO                 , NO   , AL(4) , AL(5) , AL(6) , NO , \
       NO   , NO   , NO   , NO   , NO                 , NO   , AL(1) , AL(2) , AL(3) , NO , \
-      TRNS , TRNS , TRNS , TRNS , TRNS , TRNS , TRNS , TRNS , TRNS v, NO    , NO    , TRNS
+      TRNS , TRNS , TRNS , TRNS , TRNS , TRNS , TRNS , TRNS , TRNS  , NO    , NO    , TRNS
   ),
 
   KEYMAP( /* 5: CTRL Modified Numbers */
